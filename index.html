@@ -72,12 +72,13 @@
       top: 0;
       z-index: 50;
       backdrop-filter: blur(16px);
-      background: rgba(2,8,23,0.72);
-      border-bottom: 1px solid rgba(255,255,255,0.06);
+      background: rgba(4,18,43,0.92);
+      border-bottom: 1px solid rgba(32,217,255,0.14);
+      box-shadow: 0 10px 28px rgba(0,0,0,0.22);
     }
 
     .header-inner {
-      min-height: 76px;
+      min-height: 78px;
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -90,16 +91,14 @@
       gap: 12px;
     }
 
-    .brand-mark {
-      width: 38px;
-      height: 38px;
+    .brand-logo {
+      width: 44px;
+      height: 44px;
+      object-fit: cover;
       border-radius: 12px;
-      display: grid;
-      place-items: center;
-      font-weight: 800;
-      color: #02111f;
-      background: linear-gradient(135deg, var(--cyan), var(--cyan-2));
-      box-shadow: 0 10px 24px rgba(32,217,255,0.28);
+      border: 1px solid rgba(255,255,255,0.08);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.28);
+      flex: 0 0 auto;
     }
 
     .brand-text {
@@ -136,15 +135,6 @@
 
     .nav a:hover {
       color: var(--text);
-    }
-
-    .nav .nav-cta {
-      color: #001120;
-      font-weight: 800;
-      padding: 10px 14px;
-      border-radius: 12px;
-      background: linear-gradient(135deg, var(--cyan), var(--cyan-2));
-      box-shadow: 0 12px 24px rgba(32,217,255,0.18);
     }
 
     .hero {
@@ -422,19 +412,14 @@
     }
 
     .chip {
-      padding: 10px 14px;
-      border-radius: 12px;
-      font-size: 13px;
-      font-weight: 800;
-      border: 1px solid var(--border);
-      background: rgba(255,255,255,0.03);
-      color: var(--text);
-    }
-
-    .chip-accent {
-      background: rgba(32,217,255,0.12);
-      border-color: rgba(32,217,255,0.24);
-      color: var(--cyan-2);
+      padding: 12px 18px;
+      border-radius: 14px;
+      font-size: 14px;
+      font-weight: 900;
+      border: 1px solid rgba(32,217,255,0.24);
+      background: linear-gradient(135deg, var(--cyan), var(--cyan-2));
+      color: #001120;
+      box-shadow: 0 14px 26px rgba(32,217,255,0.2);
     }
 
     .section {
@@ -513,8 +498,7 @@
 
     .showcase-panel,
     .support-panel,
-    .cta-panel,
-    .membership-panel {
+    .cta-panel {
       border-radius: 28px;
       border: 1px solid var(--border);
       box-shadow: var(--shadow);
@@ -576,6 +560,9 @@
 
     .rank-card {
       padding: 28px;
+      border-radius: 28px;
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow);
       background:
         radial-gradient(circle at top center, rgba(177,109,255,0.13), transparent 26%),
         linear-gradient(180deg, rgba(255,255,255,0.05), rgba(255,255,255,0.03));
@@ -705,78 +692,6 @@
       padding-top: 6px;
     }
 
-    .membership-panel {
-      padding: 30px;
-      background:
-        radial-gradient(circle at top left, rgba(177,109,255,0.14), transparent 24%),
-        radial-gradient(circle at bottom right, rgba(32,217,255,0.12), transparent 22%),
-        linear-gradient(180deg, rgba(255,255,255,0.05), rgba(255,255,255,0.03));
-    }
-
-    .membership-kicker {
-      color: var(--cyan);
-      font-size: 12px;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      font-weight: 800;
-      margin-bottom: 12px;
-    }
-
-    .membership-grid {
-      display: grid;
-      grid-template-columns: 1fr auto;
-      gap: 24px;
-      align-items: center;
-    }
-
-    .membership-panel h3 {
-      margin: 0 0 12px;
-      font-size: 38px;
-      letter-spacing: -1px;
-    }
-
-    .membership-panel p {
-      margin: 0 0 18px;
-      color: var(--muted);
-      line-height: 1.8;
-      max-width: 700px;
-    }
-
-    .membership-tags {
-      display: flex;
-      gap: 10px;
-      flex-wrap: wrap;
-    }
-
-    .membership-price {
-      padding: 18px 22px;
-      border-radius: 20px;
-      background: rgba(255,255,255,0.05);
-      border: 1px solid rgba(177,109,255,0.24);
-      min-width: 210px;
-      text-align: center;
-    }
-
-    .price-top {
-      color: var(--muted);
-      font-size: 12px;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      margin-bottom: 8px;
-    }
-
-    .price-value {
-      font-size: 34px;
-      font-weight: 900;
-      letter-spacing: -1px;
-      margin-bottom: 8px;
-    }
-
-    .price-note {
-      color: var(--muted);
-      font-size: 14px;
-    }
-
     .cta-panel {
       padding: 30px;
       background:
@@ -834,8 +749,7 @@
 
     @media (max-width: 1040px) {
       .hero-grid,
-      .showcase,
-      .membership-grid {
+      .showcase {
         grid-template-columns: 1fr;
       }
 
@@ -866,7 +780,6 @@
 
       .section-title,
       .showcase-panel h3,
-      .membership-panel h3,
       .cta-panel h3 {
         font-size: 30px;
       }
@@ -896,7 +809,6 @@
       .hero-copy,
       .section-copy,
       .showcase-panel p,
-      .membership-panel p,
       .cta-panel p {
         font-size: 16px;
       }
@@ -916,7 +828,7 @@
   <header class="site-header">
     <div class="container header-inner">
       <a class="brand-wrap" href="/">
-        <div class="brand-mark">N</div>
+        <img class="brand-logo" src="/NovaWorkout.png" alt="Nova Workout logo">
         <div class="brand-text">
           <div class="brand-name">Nova Workout</div>
           <div class="brand-sub">Gym tracker</div>
@@ -929,7 +841,6 @@
         <a href="/privacy-policy.html">Privacy Policy</a>
         <a href="/delete-account.html">Delete Account</a>
         <a href="/app-ads.txt">app-ads.txt</a>
-        <a class="nav-cta" href="#membership">Membership</a>
       </nav>
     </div>
   </header>
@@ -968,7 +879,7 @@
             </div>
             <div class="stat-pill">
               <div class="stat-label">Unlock</div>
-              <div class="stat-value">XP, points, rewards</div>
+              <div class="stat-value">XP and rewards</div>
             </div>
           </div>
         </div>
@@ -1013,9 +924,7 @@
               <div class="session-title">Workout Session</div>
               <div class="session-meta">Monday, Mar 23 • Any time</div>
               <div class="session-actions">
-                <div class="chip chip-accent">Recover & prepare</div>
-                <div class="chip">Show up +20</div>
-                <div class="chip">Hydration +15</div>
+                <div class="chip">Start Workout</div>
               </div>
             </div>
           </div>
@@ -1125,9 +1034,9 @@
           <div class="rank-kicker">Profile and ranking snapshot</div>
 
           <div class="rank-user">
-            <div class="rank-avatar">B</div>
+            <div class="rank-avatar">A</div>
             <div>
-              <div class="rank-name">Brandon</div>
+              <div class="rank-name">Atlas</div>
               <div class="rank-role">Rookie Lifter • Lv.2</div>
             </div>
           </div>
@@ -1222,37 +1131,6 @@
             </div>
             <div class="arrow">›</div>
           </article>
-        </div>
-      </div>
-    </section>
-
-    <section id="membership" class="section">
-      <div class="container">
-        <div class="membership-panel">
-          <div class="membership-kicker">Elite membership</div>
-
-          <div class="membership-grid">
-            <div>
-              <h3>Upgrade the Nova experience</h3>
-              <p>
-                Membership removes ads and unlocks a more premium experience for
-                users who want extra focus, cleaner sessions, and expanded
-                features over time.
-              </p>
-
-              <div class="membership-tags">
-                <div class="chip chip-accent">No ads</div>
-                <div class="chip">Pro features</div>
-                <div class="chip">Shared goals</div>
-              </div>
-            </div>
-
-            <div class="membership-price">
-              <div class="price-top">Current offer</div>
-              <div class="price-value">$4.99 / mo</div>
-              <div class="price-note">Simple monthly membership</div>
-            </div>
-          </div>
         </div>
       </div>
     </section>
